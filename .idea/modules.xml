@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/hadoop.iml" filepath="$PROJECT_DIR$/.idea/hadoop.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hdfs/hdfs-example.iml" filepath="$PROJECT_DIR$/hdfs/hdfs-example.iml" />
+      <module fileurl="file://$PROJECT_DIR$/mapreduce-example/mapreduce-example.iml" filepath="$PROJECT_DIR$/mapreduce-example/mapreduce-example.iml" />
+    </modules>
+  </component>
+</project>
