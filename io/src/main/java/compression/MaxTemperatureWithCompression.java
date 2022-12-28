@@ -1,3 +1,5 @@
+package compression;
+
 import org.apache.hadoop.fs.Path;
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.Text;
@@ -16,7 +18,7 @@ public class MaxTemperatureWithCompression {
 
     public static void main(String[] args) throws Exception {
         if (args.length != 2) {
-            System.err.println("Usage: MaxTemperatureWithCompression <input path> " +
+            System.err.println("Usage: compression.MaxTemperatureWithCompression <input path> " +
                     "<output path>");
             System.exit(-1);
         }
