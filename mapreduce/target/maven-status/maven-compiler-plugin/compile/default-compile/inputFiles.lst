@@ -1,1 +1,6 @@
+/Users/yjkim-studio/src/hadoop/mapreduce/src/main/java/v2/MaxTemperatureDriver.java
+/Users/yjkim-studio/src/hadoop/mapreduce/src/main/java/v2/MaxTemperatureMapper.java
 /Users/yjkim-studio/src/hadoop/mapreduce/src/main/java/ConfigurationPrinter.java
+/Users/yjkim-studio/src/hadoop/mapreduce/src/main/java/v1/MaxTemperatureMapper.java
+/Users/yjkim-studio/src/hadoop/mapreduce/src/main/java/v1/MaxTemperatureReducer.java
+/Users/yjkim-studio/src/hadoop/mapreduce/src/main/java/v2/NcdcRecordParser.java
