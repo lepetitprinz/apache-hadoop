@@ -1,2 +1,4 @@
+/Users/yjkim-studio/src/hadoop/mapreduce/src/test/java/v2/MaxTemperatureDriverTest.java
 /Users/yjkim-studio/src/hadoop/mapreduce/src/test/java/v1/MaxTemperatureMapperText.java
 /Users/yjkim-studio/src/hadoop/mapreduce/src/test/java/v1/MaxTemperatureReducerTest.java
+/Users/yjkim-studio/src/hadoop/mapreduce/src/test/java/v2/MaxTemperatureDriverMiniTest.java
