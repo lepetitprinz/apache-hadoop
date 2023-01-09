@@ -1,4 +1,4 @@
-package v2;
+package develop.v2;
 
 import org.apache.hadoop.io.Text;
 

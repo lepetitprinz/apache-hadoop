@@ -1,5 +1,6 @@
 package v1;
 
+import develop.v1.MaxTemperatureMapper;
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;

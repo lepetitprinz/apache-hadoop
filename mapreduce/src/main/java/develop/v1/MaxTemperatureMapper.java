@@ -1,4 +1,4 @@
-package v1;
+package develop.v1;
 
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.LongWritable;

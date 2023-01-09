@@ -1,10 +1,10 @@
-package v3;
+package develop.v3;
 
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Mapper;
-import v2.NcdcRecordParser;
+import develop.v2.NcdcRecordParser;
 
 import java.io.IOException;
 
