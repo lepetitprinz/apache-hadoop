@@ -1,1 +1,16 @@
-v2/MaxTemperatureDriver.class
+types/MinimalMapReduce.class
+develop/v1/MaxTemperatureReducer.class
+develop/v2/MaxTemperatureMapper.class
+types/MinimalMapReduceWithDefaults.class
+develop/v2/MaxTemperatureDriver.class
+types/whole/SmallFilesToSequenceFileConverter$SequenceFileMapper.class
+common/JobBuilder.class
+types/whole/WholeFileInputFormat.class
+develop/v3/MaxTemperatureMapper$Temperature.class
+develop/v3/MaxTemperatureDriver.class
+develop/v3/MaxTemperatureMapper.class
+types/whole/SmallFilesToSequenceFileConverter.class
+develop/v1/MaxTemperatureMapper.class
+develop/v2/NcdcRecordParser.class
+develop/ConfigurationPrinter.class
+types/whole/WholeFileRecordReader.class
