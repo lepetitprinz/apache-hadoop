@@ -1,4 +1,4 @@
-package types.whole;
+package ioformat.whole;
 
 import java.io.IOException;
 
