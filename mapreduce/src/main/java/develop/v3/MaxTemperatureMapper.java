@@ -8,7 +8,8 @@ import develop.v2.NcdcRecordParser;
 
 import java.io.IOException;
 
-public class MaxTemperatureMapper extends Mapper<LongWritable, Text, Text, IntWritable> {
+public class MaxTemperatureMapper
+    extends Mapper<LongWritable, Text, Text, IntWritable> {
     enum Temperature {
         OVER_100
     }
