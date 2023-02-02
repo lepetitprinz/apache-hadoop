@@ -1,4 +1,4 @@
-package develop;
+package workflow;
 
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.conf.Configured;

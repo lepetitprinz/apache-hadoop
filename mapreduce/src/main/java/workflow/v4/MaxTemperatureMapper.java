@@ -1,17 +1,20 @@
-package develop.v3;
+package workflow.v4;
+
+import java.io.IOException;
 
 import org.apache.hadoop.io.IntWritable;
 import org.apache.hadoop.io.LongWritable;
 import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Mapper;
-import develop.v2.NcdcRecordParser;
 
-import java.io.IOException;
-
+/*
+ * Mapper for the maximum temperature
+ */
 public class MaxTemperatureMapper
     extends Mapper<LongWritable, Text, Text, IntWritable> {
+
     enum Temperature {
-        OVER_100
+        MALFORMED
     }
 
     private NcdcRecordParser parser = new NcdcRecordParser();
@@ -23,12 +26,10 @@ public class MaxTemperatureMapper
         parser.parse(value);
         if (parser.isValidTemperature()) {
             int airTemperature = parser.getAirTemperature();
-            if (airTemperature > 1000) {
-                System.err.println("Temperature over 100 degress for input: " + value);
-                context.setStatus("Detected possibly corrupt record: see logs.");
-                context.getCounter(Temperature.OVER_100).increment(1);
-            }
             context.write(new Text(parser.getYear()), new IntWritable(airTemperature));
+        } else if (parser.isMalformedTemperature()) {
+            System.err.println("Ignoring possibly corrupt input: " + value);
+            context.getCounter(Temperature.MALFORMED).increment(1);
         }
     }
 }

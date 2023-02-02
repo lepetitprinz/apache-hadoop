@@ -1,7 +1,7 @@
-package ioformat.input;
+package io.input;
 
-import develop.v1.MaxTemperatureReducer;
-import develop.v3.MaxTemperatureMapper;
+import workflow.v1.MaxTemperatureReducer;
+import workflow.v3.MaxTemperatureMapper;
 
 import common.JobBuilder;
 import common.MetOfficeRecordParser;

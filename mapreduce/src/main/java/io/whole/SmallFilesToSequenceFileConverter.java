@@ -1,4 +1,4 @@
-package ioformat.whole;
+package io.whole;
 
 import java.io.IOException;
 
@@ -17,7 +17,10 @@ import org.apache.hadoop.mapreduce.lib.output.SequenceFileOutputFormat;
 import org.apache.hadoop.util.Tool;
 import org.apache.hadoop.util.ToolRunner;
 
-
+/*
+ * A Mapreduce program for packaging a collection of small files
+ * as a sing SequenceFile
+ */
 public class SmallFilesToSequenceFileConverter extends Configured implements Tool {
 
     static class SequenceFileMapper

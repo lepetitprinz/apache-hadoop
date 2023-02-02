@@ -1,4 +1,4 @@
-package ioformat.whole;
+package io.whole;
 
 import java.io.IOException;
 
@@ -14,6 +14,9 @@ import org.apache.hadoop.mapreduce.RecordReader;
 import org.apache.hadoop.mapreduce.TaskAttemptContext;
 import org.apache.hadoop.mapreduce.lib.input.FileSplit;
 
+/*
+ * The RecordReader used by WholeFileInputFormat for reading a whole file as a record
+ */
 public class WholeFileRecordReader extends RecordReader<NullWritable, BytesWritable> {
 
     private FileSplit fileSplit;

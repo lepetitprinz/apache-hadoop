@@ -1,4 +1,4 @@
-package ioformat.whole;
+package io.whole;
 
 import java.io.IOException;
 
@@ -10,6 +10,9 @@ import org.apache.hadoop.mapreduce.RecordReader;
 import org.apache.hadoop.mapreduce.TaskAttemptContext;
 import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 
+/*
+ * An InputFormat for reading a whole file as a record
+ */
 public class WholeFileInputFormat
         extends FileInputFormat<NullWritable, BytesWritable> {
 

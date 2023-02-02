@@ -42,8 +42,11 @@ public class JobBuilder {
 
         Job job = new Job(conf);
         job.setJarByClass(tool.getClass());
+
         FileInputFormat.addInputPath(job, new Path(args[0]));
-        FileOutputFormat.setOutputPath(job, new Path(args[1]));
+        Path outputPath = new Path(args[1]);
+        FileOutputFormat.setOutputPath(job, outputPath);
+        outputPath.getFileSystem(conf).delete(outputPath, true);
 
         return job;
     }

@@ -3,7 +3,7 @@ package v1;
 import java.io.IOException;
 import java.util.*;
 
-import develop.v1.MaxTemperatureReducer;
+import workflow.v1.MaxTemperatureReducer;
 import org.apache.hadoop.io.*;
 import org.apache.hadoop.mrunit.mapreduce.ReduceDriver;
 import org.junit.*;
