@@ -27,3 +27,8 @@ replay_pid*
 
 # Etc
 *.crc
+
+# Folder
+/output/
+/target/
+/tmp/
