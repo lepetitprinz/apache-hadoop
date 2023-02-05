@@ -32,3 +32,4 @@ replay_pid*
 /output/
 /target/
 /tmp/
+/.idea/
