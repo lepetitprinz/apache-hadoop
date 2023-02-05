@@ -19,7 +19,7 @@ import org.apache.hadoop.util.ToolRunner;
 
 /*
  * A Mapreduce program for packaging a collection of small files
- * as a sing SequenceFile
+ * MaxTemperatureUsingSecondarySort.sh a sing SequenceFile
  */
 public class SmallFilesToSequenceFileConverter extends Configured implements Tool {
 

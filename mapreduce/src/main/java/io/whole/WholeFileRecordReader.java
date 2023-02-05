@@ -15,7 +15,7 @@ import org.apache.hadoop.mapreduce.TaskAttemptContext;
 import org.apache.hadoop.mapreduce.lib.input.FileSplit;
 
 /*
- * The RecordReader used by WholeFileInputFormat for reading a whole file as a record
+ * The RecordReader used by WholeFileInputFormat for reading a whole file MaxTemperatureUsingSecondarySort.sh a record
  */
 public class WholeFileRecordReader extends RecordReader<NullWritable, BytesWritable> {
 

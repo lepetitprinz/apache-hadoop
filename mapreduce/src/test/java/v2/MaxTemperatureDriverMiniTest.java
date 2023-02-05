@@ -51,7 +51,7 @@ public class MaxTemperatureDriverMiniTest extends ClusterMapReduceTestCase {
         );
         assertThat(exitCode, is(0));
 
-        // Check the output is as expected
+        // Check the output is MaxTemperatureUsingSecondarySort.sh expected
         Path[] outputFiles = FileUtil.stat2Paths(
                 getFileSystem().listStatus(output, new OutputLogFilter())
         );
