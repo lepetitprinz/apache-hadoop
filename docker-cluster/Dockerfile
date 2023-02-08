@@ -4,6 +4,9 @@ MAINTAINER YjKim
 
 WORKDIR /root
 
+# install vim 
+RUN apt-get install -y vim
+
 # install openssh-server, openjdk and wget
 RUN apt-get install -y --no-install-recommends software-properties-common
 RUN add-apt-repository -y ppa:openjdk-r/ppa
