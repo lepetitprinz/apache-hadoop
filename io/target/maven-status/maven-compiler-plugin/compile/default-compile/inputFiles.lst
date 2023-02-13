@@ -1,11 +1,13 @@
 /Users/yjkim-studio/src/hadoop/io/src/main/java/serialization/MapWritableEx.java
+/Users/yjkim-studio/src/hadoop/io/src/main/java/parquet/TextToParquetWithAvro.java
 /Users/yjkim-studio/src/hadoop/io/src/main/java/compression/PooledStreamCompressor.java
+/Users/yjkim-studio/src/hadoop/io/src/main/java/parquet/TextToParquetWithExample.java
+/Users/yjkim-studio/src/hadoop/io/src/main/java/fileBasedDataStructure/SequenceFileRead.java
+/Users/yjkim-studio/src/hadoop/io/src/main/java/serialization/TextIterator.java
+/Users/yjkim-studio/src/hadoop/io/src/main/java/compression/MaxTemperatureWithCompression.java
 /Users/yjkim-studio/src/hadoop/io/src/main/java/serialization/CustomWritable.java
 /Users/yjkim-studio/src/hadoop/io/src/main/java/serialization/TextWritable.java
 /Users/yjkim-studio/src/hadoop/io/src/main/java/compression/StreamCompressor.java
 /Users/yjkim-studio/src/hadoop/io/src/main/java/compression/MaxTemperatureWithMapOutputCompression.java
-/Users/yjkim-studio/src/hadoop/io/src/main/java/fileBasedDataStructure/SequenceFileRead.java
-/Users/yjkim-studio/src/hadoop/io/src/main/java/serialization/TextIterator.java
 /Users/yjkim-studio/src/hadoop/io/src/main/java/compression/FileDecompressor.java
 /Users/yjkim-studio/src/hadoop/io/src/main/java/fileBasedDataStructure/SequenceFileWrite.java
-/Users/yjkim-studio/src/hadoop/io/src/main/java/compression/MaxTemperatureWithCompression.java
