@@ -8,10 +8,10 @@ WORKDIR /root
 RUN apt-get install -y vim
 
 # install openssh-server, openjdk and wget
-RUN apt-get install -y --no-install-recommends software-properties-common
-RUN add-apt-repository -y ppa:openjdk-r/ppa
-RUN apt-get update
-RUN apt-get install -y openjdk-8-jdk
+RUN apt-get install -y --no-install-recommends software-properties-common && \
+    add-apt-repository -y ppa:openjdk-r/ppa && \
+    apt-get update && \
+    apt-get install -y openjdk-8-jdk
 
 # install hadoop 3.3.2
 RUN apt-get install wget
@@ -21,9 +21,9 @@ RUN wget --no-check-certificate https://dlcdn.apache.org/hadoop/common/hadoop-3.
     rm hadoop-3.3.2.tar.gz
 
 # set environment variable
-ENV JAVA_HOME=/usr/lib/jvm/java-8-openjdk-arm64
-ENV HADOOP_HOME=/usr/local/hadoop 
-ENV PATH=$PATH:/usr/local/hadoop/bin:/usr/local/hadoop/sbin 
+ENV JAVA_HOME=/usr/lib/jvm/java-8-openjdk-arm64 \
+    HADOOP_HOME=/usr/local/hadoop \
+    PATH=$PATH:/usr/local/hadoop/bin:/usr/local/hadoop/sbin 
 
 # ssh without key
 RUN apt-get install -y openssh-client

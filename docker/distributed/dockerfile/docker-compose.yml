@@ -1,0 +1,61 @@
+version: "3.8"
+services:
+
+  master01:
+    build:
+      context: ./master
+      dockerfile: Dockerfile
+    image: hadoop-master01/latest
+    container_name: master01
+    stdin_open: true       
+    tty: true      
+    privileged: true
+    ports:
+      - 9870:9870
+      - 8088:8088
+
+  master02:
+    build:
+      context: ./master
+      dockerfile: Dockerfile
+    image: hadoop-master02/latest
+    container_name: master02
+    stdin_open: true       
+    tty: true  
+    privileged: true
+
+  slave01:
+    build:
+      context: ./slave
+      dockerfile: Dockerfile
+    image: hadoop-slave01/latest
+    container_name: slave01
+    stdin_open: true       
+    tty: true  
+    privileged: true
+    depends_on:
+      - master01
+
+  slave02:
+    build:
+      context: ./slave
+      dockerfile: Dockerfile
+    image: hadoop-slave02/latest
+    container_name: slave02
+    stdin_open: true       
+    tty: true  
+    privileged: true
+    depends_on:
+      - master01
+
+  slave03:
+    build:
+      context: ./slave
+      dockerfile: Dockerfile
+    image: hadoop-slave03/latest
+    container_name: slave03
+    stdin_open: true       
+    tty: true  
+    privileged: true
+    depends_on:
+      - master01
