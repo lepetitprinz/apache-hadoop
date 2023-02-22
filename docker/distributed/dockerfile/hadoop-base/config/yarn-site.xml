@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<?xml-stylesheet type="text/xsl" href="configuration.xsl"?>
+<?xml version="1.0"?>
 <!--
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
@@ -13,33 +12,26 @@
   See the License for the specific language governing permissions and
   limitations under the License. See accompanying LICENSE file.
 -->
-
-<!-- Put site-specific property overrides in this file. -->
-
 <configuration>
+<!-- Site specific YARN configuration properties -->
   <property>
-    <name>dfs.replication</name>
-    <value>3</value>
+    <name>yarn.nodemanager.aux-services</name>
+    <value>mapreduce_shuffle</value>
   </property>
   <property>
-    <name>dfs.permissions</name>
-    <value>false</value>
+    <name>yarn.resourcemanager.hostname</name>
+    <value>master01</value>
   </property>
   <property>
-    <name>dfs.namenode.http.address</name>
-    <value>master01:9870</value>
+    <name>yarn.nodemanager.resource.memory-mb</name>
+    <value>2048</value>
   </property>
   <property>
-    <name>dfs.secondary.http.address</name>
-    <value>master02:9868</value>
+    <name>yarn.nodemanager.resource.cpu-vcores</name>
+    <value>1</value>
   </property>
   <property>
-    <name>dfs.namenode.name.dir</name>
-    <value>file:/opt/hadoop/current/data/namenode</value>
+    <name>yarn.nodemanager.env-whitelist</name>
+    <value>JAVA_HOME,HADOOP_COMMON_HOME,HADOOP_HDFS_HOME,HADOOP_CONF_DIR,CLASSPATH_PREPEND_DISTCACHE,HADOOP_YARN_HOME,HADOOP_MAPRED_HOME</value>
   </property>
-  <!-- HDFS block size -->
-<!--   <property>
-    <name>dfs.blocksize</name>
-    <value>268435456</value>
-  </property> -->
 </configuration>

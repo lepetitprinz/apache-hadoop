@@ -1,32 +1,34 @@
-FROM centos7
+FROM centos:7
 
 RUN mkdir -p /opt/jdk && \
 	mkdir -p /opt/hadoop && \
 	mkdir -p /opt/docker && \
 	mkdir -p /data/tmp && \
-	mkdir -p /tmp
+	mkdir -p /tmp/hadoop/master
 
 RUN yum install -y net-tools && \
 	yum install -y vim-enhanced && \
-	yum intall -y wget && \
+	yum install -y wget && \
 	yum install -y openssh-server openssh-clients openssh-askpass && \
 	yum update -y && \
-	yum install java-1.8.0-openjdk-devel.x86_64 -y
+	yum install java-1.8.0-openjdk-devel -y
 
-RUN ln -s /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.312.b07-2.el8_5.x86_64 /opt/jdk/current
+RUN ln -s /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.352.b08-2.el7_9.aarch64 /opt/jdk/current
 
-ENV JAVA_HOME=/opt/jdk/current \
-	PATH=$PATH:$JAVA_HOME/bin
+ENV JAVA_HOME=/opt/jdk/current
+ENV	PATH=$PATH:$JAVA_HOME/bin
 
 WORKDIR /opt/hadoop
 
-RUN wget https://archive.apache.org/dist/hadoop/common/hadoop-3.1.3/hadoop-3.1.3.tar.gz
-	tar xvzf hadoop-3.1.3.tar.gz
-	ln -s /opt/hadoop/hadoop-3.1.3 /opt/hadoop/current
+RUN wget https://archive.apache.org/dist/hadoop/common/hadoop-3.1.3/hadoop-3.1.3.tar.gz && \
+	tar xvzf hadoop-3.1.3.tar.gz && \
+	rm -rf hadoop-3.1.3.tar.gz
 
-ENV HADOOP_HOME=/opt/hadoop/current \
-	PATH=$PATH:$HADOOP_HOME/bin \
-	PATH=$PATH:$HADOOP_HOME/sbin
+RUN	ln -s /opt/hadoop/hadoop-3.1.3 /opt/hadoop/current
+
+ENV HADOOP_HOME=/opt/hadoop/current
+ENV	PATH=$PATH:$HADOOP_HOME/binls
+ENV	PATH=$PATH:$HADOOP_HOME/sbin
 
 RUN ssh-keygen -f /etc/ssh/ssh_host_rsa_key -t rsa -N "" && \
 	ssh-keygen -f /etc/ssh/ssh_host_ecdsa_key -t ecdsa -N "" && \
@@ -35,19 +37,19 @@ RUN ssh-keygen -f /etc/ssh/ssh_host_rsa_key -t rsa -N "" && \
 RUN echo "/usr/sbin/sshd" >> /etc/profile && \
 	source /etc/profile
 
-RUN ssh-keygen -t rsa -P ""
-    cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
+RUN ssh-keygen -t rsa -P '' -f ~/.ssh/id_rsa
+RUN cat ~/.ssh/id_rsa.pub >> ~/.ssh/authorized_keys
 
-COPY config/* /tmp/
+COPY config/* /tmp/hadoop/master
 
-RUN mv /tmp/hadoop-env.sh $HADOOP_HOME/etc/hadoop/hadoop-env.sh && \
-    mv /tmp/core-site.xml $HADOOP_HOME/etc/hadoop/core-site.xml && \
-    mv /tmp/hdfs-site.xml $HADOOP_HOME/etc/hadoop/hdfs-site.xml && \ 
-    mv /tmp/yarn-site.xml $HADOOP_HOME/etc/hadoop/yarn-site.xml && \
-    mv /tmp/mapred-site.xml $HADOOP_HOME/etc/hadoop/mapred-site.xml
+RUN mv /tmp/hadoop/master/hadoop-env.sh $HADOOP_HOME/etc/hadoop/hadoop-env.sh && \
+    mv /tmp/hadoop/master/core-site.xml $HADOOP_HOME/etc/hadoop/core-site.xml && \
+    mv /tmp/hadoop/master/hdfs-site.xml $HADOOP_HOME/etc/hadoop/hdfs-site.xml && \ 
+    mv /tmp/hadoop/master/yarn-site.xml $HADOOP_HOME/etc/hadoop/yarn-site.xml && \
+    mv /tmp/hadoop/master/mapred-site.xml $HADOOP_HOME/etc/hadoop/mapred-site.xml && \
+    mv /tmp/hadoop/master/workers $HADOOP_HOME/etc/hadoop/workers
 
-RUN echo "172.17.0.2	master01" >> /etc/hosts && \
-	echo "172.17.0.3	master02" >> /etc/hosts && \
-	echo "172.17.0.4	slave01" >> /etc/hosts && \
-	echo "172.17.0.5	slave02" >> /etc/hosts && \
-	echo "172.17.0.6	slave03" >> /etc/hosts
+VOLUME ["/opt/docker/conf", "/opt/docker/data", "/opt/docker/jar"]
+
+RUN echo "LC_ALL=en_US.UTF-8" >> /etc/environment && \
+	echo "LANG=en_US.UTF-8" >> /etc/environment
