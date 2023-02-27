@@ -48,6 +48,4 @@ RUN mv /tmp/hadoop/slave/hadoop-env.sh $HADOOP_HOME/etc/hadoop/hadoop-env.sh && 
     mv /tmp/hadoop/slave/hdfs-site.xml $HADOOP_HOME/etc/hadoop/hdfs-site.xml && \ 
     mv /tmp/hadoop/slave/yarn-site.xml $HADOOP_HOME/etc/hadoop/yarn-site.xml && \
     mv /tmp/hadoop/slave/mapred-site.xml $HADOOP_HOME/etc/hadoop/mapred-site.xml
-
-RUN cat /tmp/hadoop/master/hosts >> /etc/hosts
  	 

@@ -50,6 +50,4 @@ RUN mv /tmp/hadoop/master/hadoop-env.sh $HADOOP_HOME/etc/hadoop/hadoop-env.sh &&
     mv /tmp/hadoop/master/mapred-site.xml $HADOOP_HOME/etc/hadoop/mapred-site.xml && \
     mv /tmp/hadoop/master/workers $HADOOP_HOME/etc/hadoop/workers
 
-RUN cat /tmp/hadoop/master/hosts >> /etc/hosts
-
 VOLUME ["/opt/docker/conf", "/opt/docker/data", "/opt/docker/jar"]
